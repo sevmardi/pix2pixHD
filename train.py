@@ -7,6 +7,7 @@ from data.data_loader import CreateDataLoader
 from models.models import create_model
 import util.util as util
 from util.visualizer import Visualizer
+
 import os
 import numpy as np
 import torch
@@ -14,6 +15,7 @@ from torch.autograd import Variable
 
 opt = TrainOptions().parse()
 iter_path = os.path.join(opt.checkpoints_dir, opt.name, 'iter.txt')
+
 if opt.continue_train:
     try:
         start_epoch, epoch_iter = np.loadtxt(iter_path , delimiter=',', dtype=int)
